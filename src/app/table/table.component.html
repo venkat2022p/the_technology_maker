@@ -6,7 +6,7 @@
         <input class="form-control" type="text" name="firstName" [(ngModel)]="searchText" placeholder="search">
     </div>
     <div class="col">
-        <a href="#openModal-about">Modal</a>
+        <a href="#openModal-about">Add Product</a>
     </div>
 </div>
 <div id="openModal-about" class="modalDialog">
@@ -14,6 +14,10 @@
        <a href="#close" title="Close" class="close">X</a>
        <form>
         <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="title">Id</label>
+                <input type="number" class="form-control" name="id" [(ngModel)]="obj.id" placeholder="Id">
+              </div>
           <div class="form-group col-md-12">
             <label for="title">Title</label>
             <input type="text" class="form-control" name="title" [(ngModel)]="obj.title" placeholder="Title">
@@ -40,14 +44,15 @@
             <label for="rating">Rating</label>
           <div class="form-group col-md-12">
             <label for="count">Count</label>
-            <input type="text" class="form-control" name="count" [(ngModel)]="obj.rating.count" placeholder="count">
+            <input type="number" class="form-control" name="count" [(ngModel)]="obj.rating.count" placeholder="count">
           </div>
           <div class="form-group col-md-12">
             <label for="rate">Rate</label>
-            <input type="price" class="form-control" name="rate" [(ngModel)]="obj.rating.rate" placeholder="rate">
+            <input type="number" class="form-control" name="rate" [(ngModel)]="obj.rating.rate" placeholder="rate">
           </div>
         </div>
-      </form><br>
+      </form>
+      <br>
       <button type="submit" class="btn btn-primary" href="#close" (click)="onSubmit()">Sign in</button>
      </div>
  </div>
@@ -71,7 +76,7 @@
                 <tr *ngFor="let item of items | filter: searchText  | 
                 paginate
                 : {
-                    itemsPerPage: 2,
+                    itemsPerPage: 25,
                     currentPage: pageNumber,
                     totalItems: totalPages
                   } let i = index" >

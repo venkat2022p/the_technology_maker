@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ListService } from '../list.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -29,7 +30,7 @@ export class TableComponent {
       rate:''
     }
   }
-  constructor(private list: ListService, private http: HttpClient) { }
+  constructor(private list: ListService, private http: HttpClient, private router : Router) { }
   ngOnInit() {
     this.listData()
   }
@@ -72,9 +73,8 @@ export class TableComponent {
   }
 
   onSubmit(){
-//     this.obj.push(this.items)
-// console.log(this.obj);
 this.items.push(this.obj)
+// this.router.navigate(['/table'])
 
   }
 }

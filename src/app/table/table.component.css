@@ -8,10 +8,6 @@ table {
     width: 100%;
   }
   
-  td {
-    text-align: left;
-    padding: 8px;
-  }
   th{
     text-align: center;
   }
@@ -22,8 +18,8 @@ table {
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
-    margin-top: -3em;
+    /* z-index: 99; */
+    margin-top: -6em;
     opacity:0;
 
     pointer-events: none;
@@ -33,7 +29,7 @@ table {
     pointer-events: auto;
 }
 .modalDialog > div {
-    max-width: 400px;
+    /* max-width: 400px; */
     width: 50%;
     position: relative;
     margin: 10% auto;
