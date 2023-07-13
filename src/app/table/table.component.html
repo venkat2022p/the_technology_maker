@@ -1,8 +1,56 @@
+
+<div class="container-fluid">
+    
 <div class="row w-50 mt-5">
     <div class="col">
         <input class="form-control" type="text" name="firstName" [(ngModel)]="searchText" placeholder="search">
     </div>
+    <div class="col">
+        <a href="#openModal-about">Modal</a>
+    </div>
 </div>
+<div id="openModal-about" class="modalDialog">
+    <div>
+       <a href="#close" title="Close" class="close">X</a>
+       <form>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="obj.title" placeholder="Title">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="price">Price</label>
+            <input type="price" class="form-control" name="price" [(ngModel)]="obj.price" placeholder="Price">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control rounded-0" name="description" [(ngModel)]="obj.description" rows="3"></textarea>
+
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input type="text" class="form-control" name="category"  [(ngModel)]="obj.category"placeholder="category">
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="text" class="form-control" name="image" [(ngModel)]="obj.image" placeholder="https://fakestoreapi.com/img/">
+          </div> 
+        <div class="form-row">
+            <label for="rating">Rating</label>
+          <div class="form-group col-md-12">
+            <label for="count">Count</label>
+            <input type="text" class="form-control" name="count" [(ngModel)]="obj.rating.count" placeholder="count">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="rate">Rate</label>
+            <input type="price" class="form-control" name="rate" [(ngModel)]="obj.rating.rate" placeholder="rate">
+          </div>
+        </div>
+      </form><br>
+      <button type="submit" class="btn btn-primary" href="#close" (click)="onSubmit()">Sign in</button>
+     </div>
+ </div>
 <br>
 <div class="row">
     <div class="col-12">
@@ -116,6 +164,7 @@
 <div class="d-flex justify-content-end">
     <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
     </pagination-controls>
+</div>
 </div>
 </div>
 </div>

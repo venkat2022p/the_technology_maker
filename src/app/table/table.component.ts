@@ -8,13 +8,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  items: any
+  
+  items : any = []
   isSave: boolean = false;
   isEdit: boolean = true;
   totalPages!: number;
   pageNumber: number = 1;
   searchText: any;
   data: any;
+  isShowModel : boolean = false
+  obj ={
+    id:'',
+    title :'',
+    price:'',
+    description:'',
+    category : '',
+    image:'',
+    rating:{
+      count:'',
+      rate:''
+    }
+  }
   constructor(private list: ListService, private http: HttpClient) { }
   ngOnInit() {
     this.listData()
@@ -57,4 +71,10 @@ export class TableComponent {
     this.isEdit = true
   }
 
+  onSubmit(){
+//     this.obj.push(this.items)
+// console.log(this.obj);
+this.items.push(this.obj)
+
+  }
 }
