@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,6 @@ export class ListService {
     return this.http.get(this.url)
   }
   dltData(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
-
+    return this.http.delete(this.url+'/' + id);
   }
 }
